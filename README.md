@@ -1,3 +1,0 @@
-# HelloNote
-test test test
-test 0
