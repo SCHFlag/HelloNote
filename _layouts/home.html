@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>这里设置一个标题</h2>
+        <p>这里写点东西</p>
+    </div>
+</section>
+
+<section class="categories-section">
+    <h3>📁 笔记分类</h3>
+    <div class="categories-grid">
+        {% for category in site.data.categories %}
+        <div class="category-card" id="{{ category.slug }}">
+            <div class="category-icon">{{ category.icon }}</div>
+            <h4>{{ category.name }}</h4>
+            <p>{{ category.description }}</p>
+            {% assign category_notes = site.notes | where: "category", category.slug %}
+            <span class="note-count">{{ category_notes.size }} 篇笔记</span>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+<!-- <section class="recent-notes">
+    <h3>📋 最新笔记</h3>
+    <div class="notes-list">
+        {% for note in site.notes limit: 10 %}
+        <article class="note-item">
+            <h4>
+                <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+            </h4>
+            <div class="note-meta">
+                <span class="category-badge {{ note.category }}">
+                    {% assign cat = site.data.categories | where: "slug", note.category | first %}
+                    {{ cat.icon }} {{ cat.name }}
+                </span>
+                <span class="date">{{ note.date | date: "%Y年%m月%d日" }}</span>
+            </div>
+            <p class="note-excerpt">{{ note.excerpt | strip_html | truncate: 100 }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section> -->

@@ -18,38 +18,36 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: title test
-email: your-email@example.com
+title: SCHFlag Notes
+email: SCHFlag@163.com
 description: >- 
- this is a description
+ 
 
-url: "https://schflag.github.io" 
-baseurl: "/HelloNote" 
+url: "https://schflag.github.io"
+baseurl: "/HelloNote"
 
-# twitter_username: 
-# github_username: 
+# twitter_username:
+# github_username:
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# custom note collection
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path
+
+# custom set layout
+defaults:
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
+      category: "tech"  # 默认分类
+
+# 启用自定义数据
+data_dir: _data

@@ -1,0 +1,19 @@
+- name: 鸡尾酒单
+  slug: Cocktail Recipe
+  icon: 🍸
+  description: 鸡尾酒配方记录
+
+- name: 测试-2
+  slug: test-2
+  icon: 📚
+  description: this is test-2
+
+- name: 测试-3
+  slug: test-3
+  icon: 📚
+  description: this is test-3
+
+- name: 测试-4
+  slug: test-4
+  icon: 📚
+  description: this is test-4

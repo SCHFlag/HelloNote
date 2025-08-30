@@ -1,0 +1,26 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <h1 class="site-title">
+                <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+            </h1>
+            
+            <nav class="main-nav">
+                <a href="{{ '/' | relative_url }}" class="nav-item {% if page.url == '/' %}active{% endif %}">
+                    🏠 全部笔记
+                </a>
+                
+                {% for category in site.data.categories %}
+                <a href="{{ '/categories/#' | append: category.slug | relative_url }}" 
+                   class="nav-item {% if page.category == category.slug %}active{% endif %}">
+                    {{ category.icon }} {{ category.name }}
+                </a>
+                {% endfor %}
+                
+                <a href="{{ '/about' | relative_url }}" class="nav-item">
+                    📝 关于
+                </a>
+            </nav>
+        </div>
+    </div>
+</header>
