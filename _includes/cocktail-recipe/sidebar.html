@@ -1,0 +1,16 @@
+{% assign same_category_notes = site.notes | where: "category", include.category | sort: "date" | reverse %}
+
+{% if same_category_notes.size > 1 %}
+<ul class="sidebar-list">
+    {% for note in same_category_notes limit: 10 %}
+        <li class="sidebar-item {% if note.url == page.url %}current-note{% endif %}">
+            <a href="{{ note.url | relative_url }}" class="sidebar-link">
+                <span class="note-title">{{ note.title }}</span>
+                <span class="note-date">{{ note.date | date: "%m-%d" }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="no-notes">暂无笔记</p>
+{% endif %}

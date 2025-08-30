@@ -145,3 +145,91 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* 笔记容器布局 */
+.note-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 侧边栏样式 */
+.note-sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.sidebar-content {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.sidebar-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.ssidebar-item:hover {
+    background-color: #e9ecef;
+}
+
+.sidebar-item.current {
+    background-color: #667eea;
+}
+
+.sidebar-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.sidebar.current .sidebar-link {
+    color: white;
+}
+
+    /* 当前笔记高亮样式 */
+.sidebar-item.current-note {
+    background-color: #667eea; /* 深蓝色背景 */
+}
+
+.sidebar-item.current-note .sidebar-link {
+    color: white; /* 白色文字 */
+}
+
+.sidebar-item.current-note .note-date {
+    color: rgba(255, 255, 255, 0.8); /* 浅白色日期 */
+}
+
+/* 悬停效果 */
+.sidebar-item:hover {
+    background-color: #aabbee; /* 稍蓝 */
+}
+.sidebar-item.current-note:hover {
+    background-color: #5a67d8; /* 稍深的蓝色 */
+}
