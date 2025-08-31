@@ -3,12 +3,15 @@ layout: default
 ---
 <div class="note-container">
     <!-- 侧边栏 -->
+    <label for="sidebar-toggle" class="menu-btn">☰</label>
+    <input type="checkbox" id="sidebar-toggle" hidden>
     <aside class="note-sidebar">
         <div class="sidebar-content">
             <h3>笔记列表</h3>
             {% include cocktail-recipe/sidebar.html category=page.category current_url=page.url %}
         </div>
     </aside>
+
 
     <article class="note-page">
         <header class="note-header">

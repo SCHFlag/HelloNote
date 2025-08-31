@@ -163,6 +163,34 @@ body {
     align-self: start;
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
+    display: none;
+}
+
+/* 菜单按钮 */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: #113377;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#sidebar-toggle:checked ~ .note-sidebar {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 15px;
+    width: 300px;
+}
+@media (min-width: 768px) {
+    .note-sidebar { 
+        display: grid;    
+        position: sticky !important;
+    }
+    .menu-btn { display: none; }
 }
 
 .sidebar-content {
